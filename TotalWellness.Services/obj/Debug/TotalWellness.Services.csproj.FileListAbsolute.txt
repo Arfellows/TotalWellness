@@ -1,0 +1,6 @@
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Services.dll
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Services.pdb
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.dll
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.pdb

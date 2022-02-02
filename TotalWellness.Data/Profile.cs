@@ -16,13 +16,15 @@ namespace TotalWellness.Data
         public Guid OwnerId { get; set; }
 
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
-        public DateTime BirthDate { get; set; }
+        public DateTime DOB { get; set; }
 
         public int YearsOnTeam { get; set; }
 

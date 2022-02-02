@@ -14,7 +14,7 @@ namespace TotalWellness.Data
         public int PostId { get; set; }
 
         [ForeignKey("Profile")]
-        public int ProfileId { get; set; }
+        public int? ProfileId { get; set; }            //required in post create model
         public virtual Profile Profile { get; set; }
 
         [Required]

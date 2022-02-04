@@ -113,3 +113,4 @@ C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness\bin\Microsoft
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness\obj\Debug\TotalWellness.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness\obj\Debug\TotalWellness.dll
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness\obj\Debug\TotalWellness.pdb
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness\bin\TotalWellness.Services.dll.config

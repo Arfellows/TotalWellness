@@ -1,19 +1,15 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-//using System.Web.ApplicationServices;
 using System.Web.Mvc;
-using TotalWellness.Models;
-using TotalWellness.Services;
 
 namespace TotalWellness.Controllers
 {
-    public class ProfileController : Controller
+    public class TeamController : Controller
     {
-        //GET: Profile
-       [Authorize]
+        // GET: Team
+        [Authorize]
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -30,7 +26,7 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create (ProfileCreate model)
+        public ActionResult Create(ProfileCreate model)
         {
             if (!ModelState.IsValid)
             {
@@ -69,7 +65,7 @@ namespace TotalWellness.Controllers
             return View(model);
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ProfileEdit model)
@@ -94,7 +90,7 @@ namespace TotalWellness.Controllers
             return View(model);
         }
 
-      
+
         public ActionResult Delete(int id)
         {
             var svc = CreateProfileService();
@@ -103,7 +99,7 @@ namespace TotalWellness.Controllers
             return View(model);
         }
 
-       
+
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -118,7 +114,7 @@ namespace TotalWellness.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
 
         private ProfileService CreateProfileService()
         {

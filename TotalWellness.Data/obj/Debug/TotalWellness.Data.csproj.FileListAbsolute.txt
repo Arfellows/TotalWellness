@@ -16,3 +16,4 @@ C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debu
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.Migrations.FirstMigration.resources
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.csproj.GenerateResource.cache
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.Migrations.SecondMigration.resources
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.csproj.AssemblyReference.cache

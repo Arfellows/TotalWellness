@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TotalWellness.Data;
 using TotalWellness.Models;
 using TotalWellness.Services;
 
 namespace TotalWellness.Controllers
 {
-    public class TeamController : Controller
+    public class PostController : Controller
     {
-        
 
-        // GET: Team
+        // GET: Post
         [Authorize]
         public ActionResult Index()
         {
-            var service = new TeamService();
-            var model = service.GetTeams();
+            var service = new PostService();
+            var model = service.GetPosts();
 
             return View(model);
         }
@@ -30,23 +28,23 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TeamCreate team)
+        public ActionResult Create(PostCreate post)
         {
             if (!ModelState.IsValid)
             {
-                return View(team);
+                return View(post);
             }
-            var service = new TeamService();
+            var service = new PostService();
 
-            service.CreateTeam(team);
+            service.CreatePost(post);
 
             return RedirectToAction("Details");
         }
 
         public ActionResult Details(int id)
         {
-            var service = CreateTeamService();
-            var model = service.GetTeamById(id);
+            var service = CreatePostService();
+            var model = service.GetPostById(id);
 
             return View(model);
         }
@@ -54,13 +52,12 @@ namespace TotalWellness.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateTeamService();
-            var detail = service.GetTeamById(id);
+            var service = CreatePostService();
+            var detail = service.GetPostById(id);
             var model =
-                new TeamEdit
+                new PostEdit
                 {
-                    TeamId = detail.TeamId,
-                    TeamName = detail.TeamName
+
                 };
 
             return View(model);
@@ -69,25 +66,25 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, TeamEdit model)
+        public ActionResult Edit(int id, PostEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.TeamId != id)
+            if (model.PostId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
             }
 
-            var service = CreateTeamService();
+            var service = CreatePostService();
 
-            if (service.UpdateTeam(model))
+            if (service.UpdatePost(model))
             {
-                TempData["SaveResult"] = "Your team name was updated successfully!";
+                TempData["SaveResult"] = "Your post was updated successfully!";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your team name could not be updated.");
+            ModelState.AddModelError("", "Your post could not be updated.");
             return View(model);
         }
 
@@ -95,8 +92,8 @@ namespace TotalWellness.Controllers
 
         public ActionResult Delete(int id)
         {
-            var svc = CreateTeamService();
-            var model = svc.GetTeamById(id);
+            var svc = CreatePostService();
+            var model = svc.GetPostById(id);
 
             return View(model);
         }
@@ -105,20 +102,20 @@ namespace TotalWellness.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteTeam(int id)
+        public ActionResult DeletePost(int id)
         {
-            var service = CreateTeamService();
+            var service = CreatePostService();
 
-            service.DeleteTeam(id);
+            service.DeletePost(id);
 
             TempData["SaveResult"] = "Your team was successfully deleted!";
 
             return RedirectToAction("Index");
         }
 
-        private TeamService CreateTeamService()
-        {         
-            var service = new TeamService();
+        private PostService CreatePostService()
+        {
+            var service = new PostService();
             return service;
         }
 

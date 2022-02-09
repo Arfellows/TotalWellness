@@ -12,9 +12,9 @@ namespace TotalWellness.Services
     {
         private readonly Guid _userId;
 
-        public TeamService(Guid userId)
+        public TeamService()
         {
-            _userId = userId;
+            
         }
 
         public bool CreateTeam(TeamCreate model)

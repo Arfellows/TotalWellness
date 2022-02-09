@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TotalWellness.Data;
+using TotalWellness.Models;
+using TotalWellness.Services;
 
 namespace TotalWellness.Controllers
 {
     public class TeamController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Team
         [Authorize]
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProfileService(userId);
-            var model = service.GetProfiles();
+            var service = new TeamService();
+            var model = service.GetTeams();
 
             return View(model);
         }
@@ -26,24 +30,23 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProfileCreate model)
+        public ActionResult Create(TeamCreate team)
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(team);
             }
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProfileService(userId);
+            var service = new TeamService();
 
-            object p = service.CreateProfile(model);
+            service.CreateTeam(team);
 
             return RedirectToAction("Details");
         }
 
         public ActionResult Details(int id)
         {
-            var service = CreateProfileService();
-            var model = service.GetProfileById(id);
+            var service = CreateTeamService();
+            var model = service.GetTeamById(id);
 
             return View(model);
         }
@@ -51,15 +54,13 @@ namespace TotalWellness.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateProfileService();
-            var detail = service.GetProfileById(id);
+            var service = CreateTeamService();
+            var detail = service.GetTeamById(id);
             var model =
-                new ProfileEdit
+                new TeamEdit
                 {
-                    ProfileId = detail.ProfileId,
-                    FirstName = detail.FirstName,
-                    LastName = detail.LastName,
-                    Email = detail.Email
+                    TeamId = detail.TeamId,
+                    TeamName = detail.TeamName
                 };
 
             return View(model);
@@ -68,33 +69,34 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ProfileEdit model)
+        public ActionResult Edit(int id, TeamEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.ProfileId != id)
+            if (model.TeamId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
             }
 
-            var service = CreateProfileService();
+            var service = CreateTeamService();
 
-            if (service.UpdateProfile(model))
+            if (service.UpdateTeam(model))
             {
-                TempData["SaveResult"] = "Your profile was updated successfully!";
+                TempData["SaveResult"] = "Your team name was updated successfully!";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your profile could not be updated.");
+            ModelState.AddModelError("", "Your team name could not be updated.");
             return View(model);
         }
 
 
+
         public ActionResult Delete(int id)
         {
-            var svc = CreateProfileService();
-            var model = svc.GetProfileById(id);
+            var svc = CreateTeamService();
+            var model = svc.GetTeamById(id);
 
             return View(model);
         }
@@ -103,24 +105,22 @@ namespace TotalWellness.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteProfile(int id)
+        public ActionResult Delete(int id)
         {
-            var service = CreateProfileService();
+            var service = CreateTeamService();
 
-            service.DeleteProfile(id);
+            service.DeleteTeam(id);
 
-            TempData["SaveResult"] = "Your profile was successfully deleted!";
+            TempData["SaveResult"] = "Your team was successfully deleted!";
 
             return RedirectToAction("Index");
         }
 
-
-
-        private ProfileService CreateProfileService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProfileService(userId);
+        private TeamService CreateTeamService()
+        {         
+            var service = new TeamService();
             return service;
         }
+
     }
 }

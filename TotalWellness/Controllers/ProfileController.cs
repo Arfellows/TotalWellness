@@ -39,7 +39,7 @@ namespace TotalWellness.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ProfileService(userId);
 
-            object p = service.CreateProfile(model);
+            service.CreateProfile(model);
 
             return RedirectToAction("Details");
         }

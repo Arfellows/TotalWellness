@@ -8,97 +8,97 @@ using TotalWellness.Models;
 
 namespace TotalWellness.Services
 {
-    public class PostService
+    public class CommentService
     {
         
 
-        public PostService()
+        public CommentService()
         {
 
         }
 
-        public bool CreatePost(PostCreate model)
+        public bool CreateComment(CommentCreate model)
         {
             var entity =
-                new Post()
+                new Comment()
                 {
-                    Subject = model.Subject,
                     Message = model.Message
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Posts.Add(entity);
+                ctx.Comments.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<PostListItem> GetPosts()
+        public IEnumerable<CommentListItem> GetComments()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .Posts
+                        .Comments
                         .Select(
                             e =>
-                                new PostListItem
+                                new CommentListItem
                                 {
-                                    PostId = e.PostId,
-                                    Subject = e.Subject,
-                                    PostDate = e.PostDate
+                                    CommentId = e.CommentId,
+                                    ProfileId = e.ProfileId,
+                                    Message = e.Message,
+                                    Date = e.Date
                                 }
                         );
                 return query.ToArray();
             }
         }
 
-        public PostDetail GetPostById(int id)
+        public CommentDetail GetCommentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Posts
-                        .Single(e => e.PostId == id);
+                        .Comments
+                        .Single(e => e.CommentId == id);
                 return
-                    new PostDetail
+                    new CommentDetail
                     {
+                        CommentId = entity.CommentId,
                         PostId = entity.PostId,
                         ProfileId = entity.ProfileId,
-                        Subject = entity.Subject,
                         Message = entity.Message,
-                        PostDate = entity.PostDate
+                        Date = entity.Date
                     };
             }
         }
 
-        public bool UpdatePost(PostEdit model)
+        public bool UpdateComment(CommentEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Posts
-                        .Single(e => e.PostId == model.PostId);
+                        .Comments
+                        .Single(e => e.CommentId == model.CommentId);
 
-                entity.PostId = model.PostId;
-                entity.Message = model.Message;
+                entity.CommentId = model.CommentId;
+                
 
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeletePost(int postId)
+        public bool DeleteComment(int commentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Posts
-                        .Single(e => e.PostId == postId);
+                        .Comments
+                        .Single(e => e.CommentId == commentId);
 
-                ctx.Posts.Remove(entity);
+                ctx.Comments.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

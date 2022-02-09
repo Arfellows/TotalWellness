@@ -8,15 +8,14 @@ using TotalWellness.Services;
 
 namespace TotalWellness.Controllers
 {
-    public class PostController : Controller
+    public class CommentController : Controller
     {
-
-        // GET: Post
+        // GET: Comment
         [Authorize]
         public ActionResult Index()
         {
-            var service = new PostService();
-            var model = service.GetPosts();
+            var service = new CommentService();
+            var model = service.GetComments();
 
             return View(model);
         }
@@ -28,23 +27,23 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PostCreate post)
+        public ActionResult Create(CommentCreate comment)
         {
             if (!ModelState.IsValid)
             {
-                return View(post);
+                return View(comment);
             }
-            var service = new PostService();
+            var service = new CommentService();
 
-            service.CreatePost(post);
+            service.CreateComment(comment);
 
             return RedirectToAction("Details");
         }
 
         public ActionResult Details(int id)
         {
-            var service = CreatePostService();
-            var model = service.GetPostById(id);
+            var service = CreateCommentService();
+            var model = service.GetCommentById(id);
 
             return View(model);
         }
@@ -52,12 +51,12 @@ namespace TotalWellness.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreatePostService();
-            var detail = service.GetPostById(id);
+            var service = CreateCommentService();
+            var detail = service.GetCommentById(id);
             var model =
-                new PostEdit
+                new CommentEdit
                 {
-                    PostId = detail.PostId,
+                    CommentId = detail.CommentId,
                     Message = detail.Message
                 };
 
@@ -67,25 +66,25 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, PostEdit model)
+        public ActionResult Edit(int id, CommentEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.PostId != id)
+            if (model.CommentId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
             }
 
-            var service = CreatePostService();
+            var service = CreateCommentService();
 
-            if (service.UpdatePost(model))
+            if (service.UpdateComment(model))
             {
-                TempData["SaveResult"] = "Your post was updated successfully!";
+                TempData["SaveResult"] = "Your comment was updated successfully!";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your post could not be updated.");
+            ModelState.AddModelError("", "Your comment could not be updated.");
             return View(model);
         }
 
@@ -93,8 +92,8 @@ namespace TotalWellness.Controllers
 
         public ActionResult Delete(int id)
         {
-            var svc = CreatePostService();
-            var model = svc.GetPostById(id);
+            var svc = CreateCommentService();
+            var model = svc.GetCommentById(id);
 
             return View(model);
         }
@@ -103,22 +102,21 @@ namespace TotalWellness.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteComment(int id)
         {
-            var service = CreatePostService();
+            var service = CreateCommentService();
 
-            service.DeletePost(id);
+            service.DeleteComment(id);
 
-            TempData["SaveResult"] = "Your post was successfully deleted!";
+            TempData["SaveResult"] = "Your comment was successfully deleted!";
 
             return RedirectToAction("Index");
         }
 
-        private PostService CreatePostService()
+        private CommentService CreateCommentService()
         {
-            var service = new PostService();
+            var service = new CommentService();
             return service;
         }
-
     }
 }

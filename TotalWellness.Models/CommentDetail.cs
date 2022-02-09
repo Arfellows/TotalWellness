@@ -11,7 +11,7 @@ namespace TotalWellness.Models
         public int CommentId { get; set; }
         public int PostId { get; set; }
         public int ProfileId { get; set; }
-        public int Message { get; set; }
+        public string Message { get; set; }
         public DateTimeOffset Date { get; set; }
     }
 }

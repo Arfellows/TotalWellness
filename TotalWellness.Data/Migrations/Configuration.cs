@@ -10,10 +10,20 @@ namespace TotalWellness.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "TotalWellness.Data.ApplicationDbContext";
         }
 
         protected override void Seed(TotalWellness.Data.ApplicationDbContext context)
         {
+            context.Teams.AddOrUpdate(t => t.TeamId,
+                new Team() { TeamName = "Blue Bears" },
+                new Team() { TeamName = "Yellow Yorkies" },
+                new Team() { TeamName = "Red Rabbits" },
+                new Team() { TeamName = "Pink Pandas" },
+                new Team() { TeamName = "Green Geckos" },
+                new Team() { TeamName = "Orange Otters" }
+                );
+            context.SaveChanges();
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

@@ -19,6 +19,9 @@ namespace TotalWellness.Services
 
         public bool CreateProfile(ProfileCreate model)
         {
+            Random num = new Random();
+            int teamId = num.Next(1, 6);
+
             var entity =
                 new Profile()
                 {
@@ -26,7 +29,8 @@ namespace TotalWellness.Services
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     DOB = model.DOB,
-                    Email = model.Email
+                    TeamId = teamId,
+                    Email = model.Email                   
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -107,6 +111,7 @@ namespace TotalWellness.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
 
 
     }

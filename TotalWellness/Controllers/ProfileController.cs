@@ -41,7 +41,7 @@ namespace TotalWellness.Controllers
 
             service.CreateProfile(model);
 
-            return RedirectToAction("Details");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Details(int id)

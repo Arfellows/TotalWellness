@@ -40,7 +40,7 @@ namespace TotalWellness.Controllers
 
             service.CreateTeam(team);
 
-            return RedirectToAction("Details");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Details(int id)

@@ -3,7 +3,7 @@ namespace TotalWellness.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -15,7 +15,7 @@ namespace TotalWellness.Data.Migrations
                         PostId = c.Int(nullable: false),
                         ProfileId = c.Int(nullable: false),
                         Message = c.String(nullable: false, maxLength: 200),
-                        Date = c.DateTime(nullable: false),
+                        Date = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.CommentId)
                 .ForeignKey("dbo.Post", t => t.PostId, cascadeDelete: true)
@@ -31,7 +31,7 @@ namespace TotalWellness.Data.Migrations
                         ProfileId = c.Int(),
                         Subject = c.String(nullable: false, maxLength: 25),
                         Message = c.String(nullable: false, maxLength: 500),
-                        PostDate = c.DateTime(nullable: false),
+                        PostDate = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.PostId)
                 .ForeignKey("dbo.Profile", t => t.ProfileId)
@@ -46,7 +46,6 @@ namespace TotalWellness.Data.Migrations
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         DOB = c.DateTime(nullable: false),
-                        YearsOnTeam = c.Int(nullable: false),
                         Email = c.String(nullable: false),
                         TeamId = c.Int(nullable: false),
                     })

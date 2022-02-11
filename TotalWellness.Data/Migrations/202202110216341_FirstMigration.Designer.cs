@@ -13,7 +13,7 @@ namespace TotalWellness.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202202020130195_FirstMigration"; }
+            get { return "202202110216341_FirstMigration"; }
         }
         
         string IMigrationMetadata.Source

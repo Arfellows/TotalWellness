@@ -16,6 +16,6 @@ namespace TotalWellness.Data
         [Display(Name = "Team Name")]
         public string TeamName { get; set; }
 
-       /* public List<Profile> ListOfProfiles { get; set; } */ //Collection for profiles on team
+        
     }
 }

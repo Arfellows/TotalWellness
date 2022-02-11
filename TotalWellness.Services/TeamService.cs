@@ -10,7 +10,7 @@ namespace TotalWellness.Services
 {
     public class TeamService
     {
-        private readonly Guid _userId;
+        
 
         public TeamService()
         {

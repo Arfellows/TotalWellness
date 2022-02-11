@@ -26,8 +26,6 @@ namespace TotalWellness.Data
         [Required]
         public DateTime DOB { get; set; }
 
-        public int YearsOnTeam { get; set; }
-
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

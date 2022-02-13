@@ -38,7 +38,7 @@ namespace TotalWellness.Controllers
 
             service.CreatePost(post);
 
-            return RedirectToAction("Details");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Details(int id)

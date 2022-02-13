@@ -31,5 +31,7 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TeamId }) |
     @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Create Post", "Create", "Post", null, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("View Posts", "Index", "Post", null, new{ @class = "btn btn-primary btn-large" })
 </p>
 

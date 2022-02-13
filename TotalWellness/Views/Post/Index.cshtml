@@ -36,9 +36,10 @@
                 @Html.DisplayFor(modelItem => item.PostDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TeamId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TeamId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TeamId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PostId }) |
+                @Html.ActionLink("Comment", "Create", "Comment", null, new { @class = "btn btn-primary btn-large" })
             </td>
         </tr>
     }

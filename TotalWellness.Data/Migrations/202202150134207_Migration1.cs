@@ -3,7 +3,7 @@ namespace TotalWellness.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Migration1 : DbMigration
     {
         public override void Up()
         {
@@ -13,13 +13,13 @@ namespace TotalWellness.Data.Migrations
                     {
                         CommentId = c.Int(nullable: false, identity: true),
                         PostId = c.Int(nullable: false),
-                        ProfileId = c.Int(nullable: false),
+                        ProfileId = c.Int(),
                         Message = c.String(nullable: false, maxLength: 200),
                         Date = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.CommentId)
                 .ForeignKey("dbo.Post", t => t.PostId, cascadeDelete: true)
-                .ForeignKey("dbo.Profile", t => t.ProfileId, cascadeDelete: true)
+                .ForeignKey("dbo.Profile", t => t.ProfileId)
                 .Index(t => t.PostId)
                 .Index(t => t.ProfileId);
             

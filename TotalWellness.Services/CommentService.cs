@@ -17,11 +17,14 @@ namespace TotalWellness.Services
 
         }
 
-        public bool CreateComment(CommentCreate model)
+        public bool CreateComment(CommentCreate model, int id)
         {
+            
             var entity =
                 new Comment()
                 {
+                    ProfileId = model.ProfileId,
+                    PostId = id,
                     Message = model.Message
                 };
             using (var ctx = new ApplicationDbContext())

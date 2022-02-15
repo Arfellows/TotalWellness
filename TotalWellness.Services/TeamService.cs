@@ -22,6 +22,7 @@ namespace TotalWellness.Services
             var entity =
                 new Team()
                 {
+                    
                     TeamName = model.TeamName
                 };
             using (var ctx = new ApplicationDbContext())

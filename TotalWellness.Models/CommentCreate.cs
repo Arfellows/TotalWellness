@@ -9,6 +9,8 @@ namespace TotalWellness.Models
 {
     public class CommentCreate
     {
+        public int? ProfileId { get; set; }
+
         [Required]
         [StringLength(200, ErrorMessage = "May not exceed 200 characters.")]
         public string Message { get; set; }

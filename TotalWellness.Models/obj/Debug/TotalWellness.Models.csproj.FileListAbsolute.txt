@@ -3,4 +3,3 @@ C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\bin\De
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Debug\TotalWellness.Models.csproj.CoreCompileInputs.cache
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Debug\TotalWellness.Models.dll
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Debug\TotalWellness.Models.pdb
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Debug\TotalWellness.Models.csproj.AssemblyReference.cache

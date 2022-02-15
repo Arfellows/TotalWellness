@@ -10,7 +10,6 @@ namespace TotalWellness.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TotalWellness.Data.ApplicationDbContext";
         }
 
         protected override void Seed(TotalWellness.Data.ApplicationDbContext context)

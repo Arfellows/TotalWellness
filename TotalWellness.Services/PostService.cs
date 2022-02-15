@@ -10,18 +10,26 @@ namespace TotalWellness.Services
 {
     public class PostService
     {
-        
+        private readonly Guid _userId;
 
-        public PostService()
+        public PostService(Guid userId)
         {
-
+            _userId = userId;
         }
 
         public bool CreatePost(PostCreate model)
         {
+            Profile profile;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
+            }
             var entity =
+
                 new Post()
                 {
+                    ProfileId = profile.ProfileId,
                     Subject = model.Subject,
                     Message = model.Message
                 };

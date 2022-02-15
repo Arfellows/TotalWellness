@@ -10,7 +10,7 @@ namespace TotalWellness.Models
     {
         public int CommentId { get; set; }
 
-        public int ProfileId { get; set; }
+        public int? ProfileId { get; set; }
 
         public string Message { get; set; }
 

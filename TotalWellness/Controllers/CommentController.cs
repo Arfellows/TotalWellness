@@ -27,7 +27,7 @@ namespace TotalWellness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CommentCreate comment)
+        public ActionResult Create(CommentCreate comment, int id)
         {
             if (!ModelState.IsValid)
             {
@@ -35,9 +35,9 @@ namespace TotalWellness.Controllers
             }
             var service = new CommentService();
 
-            service.CreateComment(comment);
+            service.CreateComment(comment, id);
 
-            return RedirectToAction("Details");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Details(int id)

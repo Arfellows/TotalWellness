@@ -13,7 +13,5 @@ C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\bin\Debu
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.dll
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.pdb
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.csproj.AssemblyReference.cache
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.Migrations.InitialCreate.resources
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.Migrations.Migration1.resources
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.csproj.GenerateResource.cache
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Data\obj\Debug\TotalWellness.Data.Migrations.FirstMigration.resources

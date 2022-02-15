@@ -39,7 +39,7 @@
                 @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.PostId }) |
-                @Html.ActionLink("Comment", "Create", "Comment", null, new { @class = "btn btn-primary btn-large" })
+                @Html.ActionLink("Comment", "Create", "Comment", new { id = item.PostId }, new { @class = "btn btn-primary btn-large" })
             </td>
         </tr>
     }

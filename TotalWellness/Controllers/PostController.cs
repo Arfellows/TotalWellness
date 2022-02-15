@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,8 @@ namespace TotalWellness.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var service = new PostService();
+            
+            var service = CreatePostService();
             var model = service.GetPosts();
 
             return View(model);
@@ -34,7 +36,7 @@ namespace TotalWellness.Controllers
             {
                 return View(post);
             }
-            var service = new PostService();
+            var service = CreatePostService();
 
             service.CreatePost(post);
 
@@ -116,7 +118,8 @@ namespace TotalWellness.Controllers
 
         private PostService CreatePostService()
         {
-            var service = new PostService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PostService(userId);
             return service;
         }
 

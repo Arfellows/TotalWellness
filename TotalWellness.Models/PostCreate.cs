@@ -9,7 +9,7 @@ namespace TotalWellness.Models
 {
     public class PostCreate
     {
-        //public int? ProfileId { get; set; }
+        public int? ProfileId { get; set; }
 
         [Required]
         [StringLength(25, ErrorMessage = "May not exceed 25 characters.")]

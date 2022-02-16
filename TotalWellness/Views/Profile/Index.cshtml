@@ -36,7 +36,7 @@
             @Html.ActionLink("Edit", "Edit", new { id = item.ProfileId }) |
             @Html.ActionLink("Details", "Details", new { id = item.ProfileId }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ProfileId }) |
-            @Html.ActionLink("Teams", "Index", "Team", new { id = item.ProfileId }, new { @class = "btn btn-info" })
+            @Html.ActionLink("My Team", "Details", "Team", new { id = item.ProfileId }, new { @class = "btn btn-info" })
         </td>
     </tr>
 }

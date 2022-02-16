@@ -42,11 +42,20 @@ namespace TotalWellness.Services
 
         public IEnumerable<PostListItem> GetPosts()
         {
+            
+            Profile profile;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                profile = ctx.Profiles.Single(p => p.OwnerId == _userId);
+            }
+
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .Posts
+                        .Posts 
+                        .Where(p => p.Profile.TeamId == profile.TeamId)
                         .Select(
                             e =>
                                 new PostListItem
@@ -62,6 +71,13 @@ namespace TotalWellness.Services
 
         public PostDetail GetPostById(int id)
         {
+            Profile profile;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
+            }
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -72,7 +88,7 @@ namespace TotalWellness.Services
                     new PostDetail
                     {
                         PostId = entity.PostId,
-                        ProfileId = entity.ProfileId,
+                        Creator = profile.FirstName,
                         Subject = entity.Subject,
                         Message = entity.Message,
                         PostDate = entity.PostDate

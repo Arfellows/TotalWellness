@@ -4,11 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>My Team</h2>
 
 
 <div>
-    <h4>Team Details</h4>
+    @*<h4>Team Details</h4>*@
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -29,9 +29,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TeamId }) |
-    @Html.ActionLink("Back to List", "Index")
-    @Html.ActionLink("Create Post", "Create", "Post", null, new { @class = "btn btn-primary btn-large" })
-    @Html.ActionLink("View Posts", "Index", "Post", null, new{ @class = "btn btn-primary btn-large" })
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.TeamId }) |*@
+    @Html.ActionLink("Create Post", "Create", "Post", null, new { @class = "btn btn-info btn-large" })
+    @Html.ActionLink("View Posts", "Index", "Post", null, new{ @class = "btn btn-info btn-large" })
 </p>
 

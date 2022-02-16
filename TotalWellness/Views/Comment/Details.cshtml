@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ProfileId)
+            @Html.DisplayNameFor(model => model.Creator)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProfileId)
+            @Html.DisplayFor(model => model.Creator)
         </dd>
 
         <dt>
@@ -53,6 +53,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CommentId  }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -10,11 +10,11 @@ namespace TotalWellness.Services
 {
     public class TeamService
     {
-        
+        private readonly Guid _userId;
 
-        public TeamService()
+        public TeamService(Guid userId)
         {
-            
+            _userId = userId;
         }
 
         public bool CreateTeam(TeamCreate model)
@@ -34,11 +34,19 @@ namespace TotalWellness.Services
 
         public IEnumerable<TeamListItem> GetTeams()
         {
+            Profile profile;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
+            }
+
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Teams
+                        .Where(t => t.TeamId == profile.TeamId)
                         .Select(
                             e =>
                                 new TeamListItem

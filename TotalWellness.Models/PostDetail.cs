@@ -10,7 +10,10 @@ namespace TotalWellness.Models
     public class PostDetail
     {
         public int PostId { get; set; }
-        public int? ProfileId { get; set; }
+
+
+        [Display(Name = "Posted By")]
+        public string Creator { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
 

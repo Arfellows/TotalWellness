@@ -10,20 +10,26 @@ namespace TotalWellness.Services
 {
     public class CommentService
     {
-        
+        private readonly Guid _userId;
 
-        public CommentService()
+        public CommentService(Guid userId)
         {
-
+            _userId = userId;
         }
 
         public bool CreateComment(CommentCreate model, int id)
         {
-            
+            Profile profile;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
+            }
+
             var entity =
                 new Comment()
                 {
-                    ProfileId = model.ProfileId,
+                    ProfileId = profile.ProfileId,
                     PostId = id,
                     Message = model.Message
                 };
@@ -36,11 +42,20 @@ namespace TotalWellness.Services
 
         public IEnumerable<CommentListItem> GetComments()
         {
+
+            //Post post;           
+
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    post = ctx.Posts.Single(p => p.PostId == );
+            //}
+
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Comments
+                        //.Where(c => c.Post.PostId == post.PostId)
                         .Select(
                             e =>
                                 new CommentListItem
@@ -57,6 +72,13 @@ namespace TotalWellness.Services
 
         public CommentDetail GetCommentById(int id)
         {
+            //Profile profile;
+
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
+            //}
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -68,7 +90,7 @@ namespace TotalWellness.Services
                     {
                         CommentId = entity.CommentId,
                         PostId = entity.PostId,
-                        ProfileId = entity.ProfileId,
+                        Creator = entity.Profile.FirstName,
                         Message = entity.Message,
                         Date = entity.Date
                     };

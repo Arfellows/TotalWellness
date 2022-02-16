@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,7 +18,7 @@ namespace TotalWellness.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var service = new TeamService();
+            var service = CreateTeamService();
             var model = service.GetTeams();
 
             return View(model);
@@ -36,7 +37,7 @@ namespace TotalWellness.Controllers
             {
                 return View(team);
             }
-            var service = new TeamService();
+            var service = CreateTeamService();
 
             service.CreateTeam(team);
 
@@ -117,8 +118,9 @@ namespace TotalWellness.Controllers
         }
 
         private TeamService CreateTeamService()
-        {         
-            var service = new TeamService();
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TeamService(userId);
             return service;
         }
 

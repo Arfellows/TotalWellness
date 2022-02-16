@@ -9,6 +9,7 @@ namespace TotalWellness.Models
 {
     public class ProfileEdit
     {
+        
         public int ProfileId { get; set; }
 
         [Display(Name = "First Name")]

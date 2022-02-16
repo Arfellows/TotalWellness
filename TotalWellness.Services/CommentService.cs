@@ -43,7 +43,7 @@ namespace TotalWellness.Services
         public IEnumerable<CommentListItem> GetComments()
         {
 
-            //Post post;           
+            //Post post;
 
             //using (var ctx = new ApplicationDbContext())
             //{
@@ -72,13 +72,7 @@ namespace TotalWellness.Services
 
         public CommentDetail GetCommentById(int id)
         {
-            //Profile profile;
-
-            //using (var ctx = new ApplicationDbContext())
-            //{
-            //    profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
-            //}
-
+            
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =

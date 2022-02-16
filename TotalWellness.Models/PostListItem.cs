@@ -9,6 +9,8 @@ namespace TotalWellness.Models
     public class PostListItem
     {
         public int PostId { get; set; }
+
+        public string Creator { get; set; }
         public string Subject { get; set; }
         public DateTimeOffset PostDate { get; set; }
     }

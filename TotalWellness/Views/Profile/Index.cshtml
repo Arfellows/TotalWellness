@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>My Profile</h2>
+<h2>Welcome!</h2>
 
 
 <table class="table">
@@ -33,10 +33,10 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ProfileId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ProfileId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ProfileId }) |
-            @Html.ActionLink("My Team", "Details", "Team", new { id = item.ProfileId }, new { @class = "btn btn-info" })
+            @*@Html.ActionLink("Edit Profile", "Edit", new { id = item.ProfileId }, new { @class = "btn btn-info" })*@
+            @Html.ActionLink("My Profile", "Details", new { id = item.ProfileId }, new { @class = "btn btn-info" })
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.ProfileId }) |*@
+            @Html.ActionLink("My Team", "Index", "Team", new { id = item.ProfileId }, new { @class = "btn btn-info" })
         </td>
     </tr>
 }

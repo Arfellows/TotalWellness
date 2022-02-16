@@ -53,6 +53,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("View Comments", "Index", "Comment", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Comment On Post", "Create", "Comment", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("All Posts", "Index", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
 </p>

@@ -71,12 +71,12 @@ namespace TotalWellness.Services
 
         public PostDetail GetPostById(int id)
         {
-            Profile profile;
+            //Profile profile;
 
-            using (var ctx = new ApplicationDbContext())
-            {
-                profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
-            }
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    profile = ctx.Profiles.Single(i => i.OwnerId == _userId);
+            //}
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -88,7 +88,7 @@ namespace TotalWellness.Services
                     new PostDetail
                     {
                         PostId = entity.PostId,
-                        Creator = profile.FirstName,
+                        Creator = entity.Profile.FirstName,
                         Subject = entity.Subject,
                         Message = entity.Message,
                         PostDate = entity.PostDate

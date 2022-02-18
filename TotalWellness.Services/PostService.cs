@@ -31,7 +31,8 @@ namespace TotalWellness.Services
                 {
                     ProfileId = profile.ProfileId,
                     Subject = model.Subject,
-                    Message = model.Message
+                    Message = model.Message,
+                    Date = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -62,7 +63,7 @@ namespace TotalWellness.Services
                                 {
                                     PostId = e.PostId,
                                     Subject = e.Subject,
-                                    PostDate = e.PostDate
+                                    Date = e.Date
                                 }
                         );
                 return query.ToArray();
@@ -84,6 +85,7 @@ namespace TotalWellness.Services
                     ctx
                         .Posts
                         .Single(e => e.PostId == id);
+                        
                 return
                     new PostDetail
                     {
@@ -91,7 +93,7 @@ namespace TotalWellness.Services
                         Creator = entity.Profile.FirstName,
                         Subject = entity.Subject,
                         Message = entity.Message,
-                        PostDate = entity.PostDate
+                        Date = entity.Date
                     };
             }
         }

@@ -18,6 +18,6 @@ namespace TotalWellness.Models
         public string Message { get; set; }
 
         [Display(Name = "Created")]
-        public DateTimeOffset PostDate { get; set; }
+        public DateTimeOffset Date { get; set; }
     }
 }

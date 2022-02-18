@@ -1,0 +1,6 @@
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\bin\Release\TotalWellness.Models.dll
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\bin\Release\TotalWellness.Models.pdb
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Release\TotalWellness.Models.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Release\TotalWellness.Models.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Release\TotalWellness.Models.dll
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Models\obj\Release\TotalWellness.Models.pdb

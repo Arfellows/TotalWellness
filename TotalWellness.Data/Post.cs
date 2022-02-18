@@ -25,6 +25,7 @@ namespace TotalWellness.Data
         [StringLength(500, ErrorMessage = "May not exceed 500 characters.")]
         public string Message { get; set; }
 
-        public DateTimeOffset PostDate { get; set; }
+        
+        public DateTimeOffset Date { get; set; }
     }
 }

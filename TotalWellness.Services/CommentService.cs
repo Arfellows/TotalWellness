@@ -31,7 +31,8 @@ namespace TotalWellness.Services
                 {
                     ProfileId = profile.ProfileId,
                     PostId = id,
-                    Message = model.Message
+                    Message = model.Message,
+                    Date = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -40,7 +41,7 @@ namespace TotalWellness.Services
             }
         }
 
-        public IEnumerable<CommentListItem> GetComments()
+        public IEnumerable<CommentListItem> GetComments(int Id)
         {
 
             //Post post;
@@ -55,7 +56,7 @@ namespace TotalWellness.Services
                 var query =
                     ctx
                         .Comments
-                        //.Where(c => c.Post.PostId == post.PostId)
+                        .Where(c => c.Post.PostId == Id)
                         .Select(
                             e =>
                                 new CommentListItem

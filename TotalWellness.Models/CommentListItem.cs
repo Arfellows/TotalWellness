@@ -14,6 +14,7 @@ namespace TotalWellness.Models
 
         public string Message { get; set; }
 
+
         public DateTimeOffset Date { get; set; }
     }
 }

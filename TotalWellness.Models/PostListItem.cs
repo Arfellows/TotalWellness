@@ -12,6 +12,6 @@ namespace TotalWellness.Models
 
         public string Creator { get; set; }
         public string Subject { get; set; }
-        public DateTimeOffset PostDate { get; set; }
+        public DateTimeOffset Date { get; set; }
     }
 }

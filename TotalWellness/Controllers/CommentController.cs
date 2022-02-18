@@ -13,10 +13,10 @@ namespace TotalWellness.Controllers
     {
         // GET: Comment
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
             var service = CreateCommentService();
-            var model = service.GetComments();
+            var model = service.GetComments(Id);
 
             return View(model);
         }
@@ -38,7 +38,7 @@ namespace TotalWellness.Controllers
 
             service.CreateComment(comment, id);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = id});
         }
 
         public ActionResult Details(int id)

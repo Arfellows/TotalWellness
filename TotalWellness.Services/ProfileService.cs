@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,14 @@ namespace TotalWellness.Services
             Random num = new Random();
             int teamId = num.Next(1, 6);
 
+            byte[] bytes = null;
+            if (model.File != null)
+            {
+                Stream profileStream = model.File.InputStream;
+                BinaryReader br = new BinaryReader(profileStream);
+                bytes = br.ReadBytes((Int32)profileStream.Length);
+            }
+
             var entity =
                 new Profile()
                 {
@@ -30,7 +39,8 @@ namespace TotalWellness.Services
                     LastName = model.LastName,
                     DOB = model.DOB,
                     TeamId = teamId,
-                    Email = model.Email                   
+                    Email = model.Email,
+                    FileContent = bytes
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -75,7 +85,8 @@ namespace TotalWellness.Services
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         DOB = entity.DOB,
-                        Email = entity.Email
+                        Email = entity.Email,
+                        FileContent = entity.FileContent
                     };
             }
         }

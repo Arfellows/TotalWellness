@@ -9,7 +9,9 @@ namespace TotalWellness.Models
 {
     public class CommentCreate
     {
-        public int? ProfileId { get; set; }
+        //public int? ProfileId { get; set; }
+
+        //public int PostId { get; set; }
 
         [Required]
         [StringLength(200, ErrorMessage = "May not exceed 200 characters.")]

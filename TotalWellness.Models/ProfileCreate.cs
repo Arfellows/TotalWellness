@@ -4,11 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace TotalWellness.Models
 {
     public class ProfileCreate
     {
+   
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -25,6 +27,7 @@ namespace TotalWellness.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-       
+        public HttpPostedFileBase File { get; set; }
+
     }
 }

@@ -34,5 +34,8 @@ namespace TotalWellness.Data
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
 
+        public string FileName { get; set; }
+        public Byte[] FileContent { get; set; }
+
     }
 }

@@ -22,5 +22,7 @@ namespace TotalWellness.Models
         public DateTime DOB { get; set; }
 
         public string Email { get; set; }
+
+        public byte[] FileContent { get; set; }
     }
 }

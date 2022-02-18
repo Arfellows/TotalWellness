@@ -56,7 +56,8 @@
 }
 
 <div>
-    @Html.ActionLink("Home", "Index", new { @class = "btn btn-info" })
+    @Html.ActionLink("Home", "Index", new { id = Model.ProfileId }, new { @class = "btn btn-info" })
+    @Html.ActionLink("My Profile", "Details", new { id = Model.ProfileId }, new { @class = "btn btn-info" })
 </div>
 
 @section Scripts {

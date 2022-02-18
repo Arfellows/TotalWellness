@@ -27,6 +27,8 @@ namespace TotalWellness.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [Display(Name = "Profile Picture")]
         public HttpPostedFileBase File { get; set; }
 
     }

@@ -40,8 +40,9 @@
                 @Html.ActionLink("View Post", "Details", new { id = item.PostId }, new { @class = "btn btn-info btn-large" })
                 @Html.ActionLink("Edit", "Edit", new { id = item.PostId }, new { @class = "btn btn-info btn-large" })
                 @Html.ActionLink("Delete", "Delete", new { id = item.PostId }, new { @class = "btn btn-info btn-large" })
-                
-                
+                @Html.ActionLink("View Comments", "Index", "Comment", new { id = item.PostId }, new { @class = "btn btn-info btn-large" })
+
+
             </td>
         </tr>
     }

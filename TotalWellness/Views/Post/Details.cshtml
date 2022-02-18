@@ -4,57 +4,57 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>PostDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PostId)
-        </dt>
+    <h1>
+        @Html.DisplayFor(model => model.Subject)</h1>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PostId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PostId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PostId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Creator)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Creator)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Creator)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Creator)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Subject)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Subject)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subject)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Subject)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Message)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Message)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Message)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Message)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
 
-    </dl>
+        </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
-    @Html.ActionLink("View Comments", "Index", "Comment", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
-    @Html.ActionLink("Comment On Post", "Create", "Comment", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
-    @Html.ActionLink("All Posts", "Index", new { id = Model.PostId }, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }, new { @class = "btn btn-info btn-large" })
+    @Html.ActionLink("View Comments", "Index", "Comment", new { id = Model.PostId }, new { @class = "btn btn-info btn-large" })
+    @Html.ActionLink("Comment On Post", "Create", "Comment", new { id = Model.PostId }, new { @class = "btn btn-info btn-large" })
+    @Html.ActionLink("All Posts", "Index", new { id = Model.PostId }, new { @class = "btn btn-info btn-large" })
 </p>

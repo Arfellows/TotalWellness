@@ -12,6 +12,7 @@
             <div>
                 
                 <dl class="dl-horizontal">
+                    
                     <dt>
                         @Html.DisplayNameFor(model => model.TeamId)
                     </dt>
@@ -31,7 +32,7 @@
             </div>
         </div>
         <div class="col">
-            <img src="url(https://media.istockphoto.com/photos/mother-and-daughter-doing-yoga-picture-id1221256351?b=1&k=20&m=1221256351&s=170667a&w=0&h=C74FAix5m4n3zlr8bHWJUIkzdo4ZHK8DqYWj07hXcpI=)" class="rounded mx-auto d-block">
+            <img alt="error" src="@Url.Content("https://media.istockphoto.com/photos/happy-multi-generational-women-having-fun-together-multiracial-on-picture-id1308419138?k=20&m=1308419138&s=612x612&w=0&h=PCM6DTruBSKoDrCkPayykUpkYRWbsGD5kbWn4SxfgSs=")" class="rounded mx-auto d-block" />
         </div>
     </div>
 </div>
@@ -43,3 +44,8 @@
     @Html.ActionLink("View Posts", "Index", "Post", null, new{ @class = "btn btn-info btn-large" })
 </p>
 
+<style>
+    img{
+
+    }
+</style>

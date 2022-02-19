@@ -1,10 +1,6 @@
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Services.dll.config
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Services.dll
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Services.pdb
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.AssemblyReference.cache
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.CoreCompileInputs.cache
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.dll
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.pdb
-C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Services.dll.config
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\EntityFramework.dll
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\EntityFramework.SqlServer.dll
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
@@ -14,8 +10,13 @@ C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Data.pdb
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Data.dll.config
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Models.pdb
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\TotalWellness.Models.dll.config
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\EntityFramework.xml
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\EntityFramework.SqlServer.xml
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.CoreCompileInputs.cache
 C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.csproj.CopyComplete
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.dll
+C:\ElevenFiftyProjects\RedBadgeProject\TotalWellness\TotalWellness.Services\obj\Debug\TotalWellness.Services.pdb

@@ -14,6 +14,7 @@ namespace TotalWellness.Models
         //public int PostId { get; set; }
 
         [Required]
+        [Display(Name ="Write Comment")]
         [StringLength(200, ErrorMessage = "May not exceed 200 characters.")]
         public string Message { get; set; }
     }

@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Comments</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*<p>
+    @Html.ActionLink("Create New", "Create", new { id = item.PostId })
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -44,6 +44,8 @@
             @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }, new { @class = "btn btn-info btn-large" })
             @Html.ActionLink("Details", "Details", new { id = item.CommentId }, new { @class = "btn btn-info btn-large" })
             @Html.ActionLink("Delete", "Delete", new { id = item.CommentId }, new { @class = "btn btn-info btn-large" })
+            @*@Html.ActionLink("Create New", "Create", new { id = item.CommentId }, new { @class = "btn btn-info btn-large" })*@
+            @Html.ActionLink("Back To Post", "Details", "Post", new { id = item.CommentId }, new { @class = "btn btn-info btn-large" })
         </td>
     </tr>
 }

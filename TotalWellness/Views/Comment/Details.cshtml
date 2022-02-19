@@ -7,23 +7,23 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CommentDetail</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CommentId)
+            @Html.HiddenFor(model => model.CommentId, new { id = "CommentId"})
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CommentId)
+            @Html.HiddenFor(model => model.CommentId, new { id = "CommentId" })
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PostId)
+            @Html.HiddenFor(model => model.PostId, new { id = "PostId" })
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PostId)
+            @Html.HiddenFor(model => model.PostId, new { id = "PostId" })
         </dd>
 
         <dt>

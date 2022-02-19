@@ -28,8 +28,9 @@
                 @Html.DisplayFor(modelItem => item.TeamName)
             </td>
             <td>
-                
+
                 @Html.ActionLink("Take Me To My Team", "Details", new { id = item.TeamId }, new { @class = "btn btn-info" })
+                @Html.ActionLink("My Profile", "Index", "Profile", new { id = item.TeamId }, new { @class = "btn btn-info" })
             </td>
         </tr>
     }

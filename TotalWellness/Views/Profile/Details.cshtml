@@ -32,11 +32,11 @@
                 <br />
                 <br />
                 <dt>
-                    @Html.DisplayNameFor(model => model.ProfileId)
+                    @Html.HiddenFor(model => model.ProfileId, new { id = "ProfileId"})
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.ProfileId)
+                    @Html.HiddenFor(model => model.ProfileId, new { id = "ProfileId" })
                 </dd>
 
                 <dt>
